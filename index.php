@@ -1,25 +1,32 @@
 <!doctype html>
 <html lang=nl>
 
-<?php 
-    include("includes/head.php");
-    include("scripts/function.php");
-?>
+<?php include("includes/head.php"); ?>
+
+<script>
+    function akkoord(){
+        location.href = 'begin.php'
+    }
+    function nietAkkoord(){
+        location.href = 'https://www.google.com'
+    }
+</script>
 
 <body>
-<?php
-if(isset($_POST['username']) && !empty($_POST['username'])){
-		login();
-	} else {
-?>
-    <h1>Login</h1>
-    <form action="index.php" method="POST">
-        <label for="username">Username:</label>
-        <input name="username" id="username" type="text">
-        <label for="pwd">Passwoord:</label>
-        <input name="pwd" id="pwd" type="password">
-        <button type="submit">Login</button>
-    </form>
-<?php } ?>
+    <div class="container">
+        <div class="jumbotron">
+	        <h1 class="display-4">Takenlijst</h1>
+        </div>
+        <div class="row">
+            <div class="col tegel knoppen">
+                <p>Deze website maakt gebruik van cookies. Wil je cookies accepteren?</p>
+                <p>
+                    <button onclick="akkoord()" class="btn-outline-dark btn-lg">Akkoord</button>
+                    <button onclick="nietAkkoord()" class="btn-outline-dark btn-lg">Niet Akkoord</button>
+                </p>
+            </div>
+        </div>
+        <?php include('includes/footer.php'); ?>
+    </div>
 </body>
 </html>

@@ -21,13 +21,23 @@ function login(){
         $user = $_POST['username'];  
         $pwd = $_POST['pwd'];  
 
-        $sql = "SELECT * FROM `gebruikers` WHERE Gebruikersnaam = '$user' AND Passwoord = '$pwd'";
+        $sql = "SELECT Passwoord FROM `gebruikers` WHERE Gebruikersnaam = '$user'";
         $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $_SESSION['logged_in'] = true;
-        echo "<p>Login succesvol!</p>";
-        header("refresh: 3; URL=");
+        $row = $result->fetch_row();
+        $hash = $row[0];
+        if(password_verify($pwd,$hash)){
+            //$_SESSION['logged_in'] = true;
+            echo "<p>Login succesvol!</p>";
+            header("refresh: 3; URL=");
+        }
+        else{
+            echo "<p>Combinatie van Gebruikersnaam en paswoord is incorrect!</p>";
+        }
+    }
+    else{
+        echo "<p>Combinatie van Gebruikersnaam en paswoord is incorrect!</p>";
     }
 
     $conn->close();
