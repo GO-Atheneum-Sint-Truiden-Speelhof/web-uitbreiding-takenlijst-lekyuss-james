@@ -9,9 +9,30 @@
 }
 
 ?>
-<div class="jumbotron">
-	<h1 class="display-4">Takenlijst</h1>
-</div>
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-4">Takenlijst</h1>
+	</div>
+		<div class="row">
+			<div id="table">
+				<table class="table table-bordered table-sm table-dark table-striped">
+					<thead>
+						<tr>
+							<td>Maker Taak</td>
+							<td>Naam Taak</td>
+							<td>Beschrijving Taak</td>
+							<td>Deadline Taak</td>
+							<td>Taak Af?</td>
+							<td>Taak Aanpassen</td>
+							<td>Taak Verwijderen?</td>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 <?php
 	// cookie plaatsen met een datum
 	$c_naam = 'cco_cookie';

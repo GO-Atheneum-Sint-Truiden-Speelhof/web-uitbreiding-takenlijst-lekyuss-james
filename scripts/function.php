@@ -28,12 +28,13 @@ function login(){
         $row = $result->fetch_row();
         $hash = $row[0];
         if(password_verify($pwd,$hash)){
-            //$_SESSION['logged_in'] = true;
+            $_SESSION['logged_in'] = true;
             echo "<p>Login succesvol!</p>";
-            header("refresh: 3; URL=");
+            header("refresh: 1.5; URL=begin.php");
         }
         else{
             echo "<p>Combinatie van Gebruikersnaam en paswoord is incorrect!</p>";
+            header("refresh: 1.5; URL=begin.php?page=login");
         }
     }
     else{

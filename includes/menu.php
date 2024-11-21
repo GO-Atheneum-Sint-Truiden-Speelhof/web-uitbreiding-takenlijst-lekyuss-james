@@ -9,8 +9,8 @@ if (session_status() === PHP_SESSION_NONE) {
 			</a>
 			<div class="collapse navbar-collapse" id="menubalk">
 				<ul class="navbar-nav mr-auto">
+					<li><a href="begin.php?page=TaakMaken" class="nav-link">Taak Maken</a></li>
 					<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-						<li><a href="begin.php?page=inschrijvingen" class="nav-link">Inschrijvingen</a></li>
             			<li><a href="begin.php?page=logout" class="nav-link">Logout</a></li>
         			<?php else: ?>
             			<li><a href="begin.php?page=login" class="nav-link">Login</a></li>
