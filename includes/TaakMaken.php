@@ -4,60 +4,43 @@
 <form method="post" action="begin.php?page=confirm">
 	<div class="row">
 		<div class="col tegel">
-			<div class="form-group row">
-				<div class="col">
-					<label for="makerN">Naam Maker:</label><br>
-					<p><input type="text" id="naam" class="form-control"name="naam"></p>
+			<div class="col-md-6">
+				<div class="form-group row">
+					<div class="col">
+						<label for="makerN">Naam Maker:</label><br>
+						<p><input type="text" id="makerN" class="form-control"name="makerN"></p>
+						<div id="foutmelding_makerN"></div>
+					</div>
 				</div>
-			</div>
-			
-			<div class="form-group row">
-				<div class="col">
-					<label for="taakN">Naam Taak:</label><br>
-					<p><input type="text" id="adres" class="form-control"name="adres"></p>
+				
+				<div class="form-group row">
+					<div class="col">
+						<label for="taakN">Naam Taak:</label><br>
+						<p><input type="text" id="taakN" class="form-control" name="taakN"></p>
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col">
-					<label for="beschrijving">Beschrijving Taak:</label><br>
-					<p><input type="text" id="beschrijving" class="form-control" name="beschrijving"></p>
+				<div class="form-group row">
+					<div class="col">
+						<label for="beschrijving">Beschrijving Taak:</label><br>
+						<p><textarea id="beschrijving" class="form-control" name="beschrijving" rows="5"></textarea></p>
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col">
-					<label for="geboortedatum">Datum Deadline:</label><br>
-					<p><input type="date" id="geboortedatum" name="geboortedatum"></p>
+				<div class="form-group row">
+					<div class="col">
+						<label for="status">Status Taak:</label><br>
+						<p><input type="text" id="status" class="form-control" name="status"></p>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="col tegel">
-			<div class="form-group row">
-				<div class="col">
-					<label for="fotoTitel">Titel van je foto:</label><br>
-					<p><input type="text" id="fotoTitel" class="form-control" name="fotoTitel"></p>
+				<div class="form-group row">
+					<div class="col">
+						<label for="deadline">Datum Deadline:</label><br>
+						<p><input type="date" id="deadline" name="deadline"></p>
+					</div>
 				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col">
-					<label for="camera">Camera:</label><br>
-					<p><input type="text" id="camera" class="form-control" name="camera"></p>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col">
-					<label for="lens">Lens:</label><br>
-					<p><input type="text" id="lens" class="form-control" name="lens"></p>
-				</div>
-			</div>	
-			<div class="form-group row">
-				<div class="col">
-					<label for="fotoBeschrijving">Beschrijf je foto:</label><br>
-					<p><textarea id="fotoBeschrijving" class="form-control" name="fotoBeschrijving" rows="10" ></textarea></p>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col">
-					<input type="submit" id="deelnemenKnop" value="deelnemen">
+				<div class="form-group row">
+					<div class="col">
+						<input type="submit" id="toevoegen-btn" value="Voeg Taak Toe">
+					</div>
 				</div>
 			</div>
 		</div>

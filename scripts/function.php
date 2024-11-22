@@ -16,6 +16,37 @@ function connectToDB(){
 
 }
 
+function saveToDB(){
+    $conn = connectToDB();
+    $sql = "INSERT INTO `taken`(NaamMaker, NaamTaak, Beschrijving, Status, Deadline)
+    VALUES ('".$_POST["makerN"]."','".$_POST["taakN"]."','".$_POST["beschrijving"]."','".$_POST["status"]."','".$_POST["deadline"]."');";
+
+    if($conn->query($sql) === true){
+        echo "New record created!";
+    }
+    else{
+        echo "ERROR: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+
+function printDB(){
+    $conn = connectToDB();
+    $sql = "SELECT NaamMaker, NaamTaak, Beschrijving, Status, Deadline FROM taken";
+    
+    $result = $conn->query($sql);
+    while ($row = $result->fetch_row()){
+        echo '<tr>';
+        for ($i = 0; $i < count($row); $i++){
+            echo "<td>";
+            echo "$row[$i]";
+            echo "</td>";
+        }
+        echo "</tr>";
+    }
+}
+
 function login(){
         $conn = connectToDB();
         $user = $_POST['username'];  

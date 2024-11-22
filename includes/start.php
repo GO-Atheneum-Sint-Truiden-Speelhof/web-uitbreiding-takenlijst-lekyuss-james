@@ -1,4 +1,5 @@
 <?php
+	include("scripts/function.php");
 	// cookie inlezen en datum weergeven
 	$c_naam = 'cco_cookie';
 	if (isset($_COOKIE[$c_naam])) {
@@ -13,21 +14,24 @@
 	<div class="jumbotron">
 		<h1 class="display-4">Takenlijst</h1>
 	</div>
-		<div class="row">
-			<div id="table">
-				<table class="table table-bordered table-sm table-dark table-striped">
+		<div class="container">
+    		<div class="col-md-12">
+				<table class="table table-bordered table-dark table-striped table-sm text-center">
 					<thead>
 						<tr>
 							<td>Maker Taak</td>
 							<td>Naam Taak</td>
 							<td>Beschrijving Taak</td>
+							<td>Status Taak</td>
 							<td>Deadline Taak</td>
-							<td>Taak Af?</td>
 							<td>Taak Aanpassen</td>
 							<td>Taak Verwijderen?</td>
 						</tr>
 					</thead>
 					<tbody>
+						<?php
+							printDB();
+						?>
 					</tbody>
 				</table>
 			</div>

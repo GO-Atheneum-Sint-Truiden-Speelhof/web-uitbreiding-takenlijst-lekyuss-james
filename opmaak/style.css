@@ -65,3 +65,12 @@ label {
 	width: 100px;
 	height: 35px;
 }
+
+#toevoegen-btn{
+	background-color: black;
+	border: 2px solid white;
+	color: white;
+	border-radius: 8px;
+	width: 125px;
+	height: 35px;
+}
