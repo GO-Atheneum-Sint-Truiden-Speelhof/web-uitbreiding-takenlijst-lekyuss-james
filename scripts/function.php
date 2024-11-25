@@ -33,27 +33,44 @@ function saveToDB(){
 
 function printDB(){
     $conn = connectToDB();
-    $sql = "SELECT NaamMaker, NaamTaak, Beschrijving, Status, Deadline FROM taken";
+    $sql = "SELECT * FROM taken";
     
     $result = $conn->query($sql);
     while ($row = $result->fetch_row()){
+        print_r($row);
         echo '<tr>';
-        for ($i = 0; $i < count($row); $i++){
+        for ($i = 1; $i < count($row); $i++){
             echo "<td>";
             echo "$row[$i]";
             echo "</td>";
         }
+        echo $row[0];
+        echo "<td><a href='begin.php?page=wijzig&id=".$row[0]."'><img src='images/potlood.png'></img></a>";
+        echo "<td><a ><img src='images/vuilbak.png'></img></a>";
         echo "</tr>";
     }
 }
 
-function login(){
-        $conn = connectToDB();
-        $user = $_POST['username'];  
-        $pwd = $_POST['pwd'];  
+function deleteRow($id){
+    $conn = connectToDB();
 
-        $sql = "SELECT Passwoord FROM `gebruikers` WHERE Gebruikersnaam = '$user'";
-        $result = $conn->query($sql);
+    $sql = "DELETE FROM taken WHERE id = $id";
+    if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+    } else {
+    echo "Error deleting record: " . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+    }
+
+function login(){
+    $conn = connectToDB();
+    $user = $_POST['username'];  
+    $pwd = $_POST['pwd'];  
+
+    $sql = "SELECT Passwoord FROM `gebruikers` WHERE Gebruikersnaam = '$user'";
+    $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_row();

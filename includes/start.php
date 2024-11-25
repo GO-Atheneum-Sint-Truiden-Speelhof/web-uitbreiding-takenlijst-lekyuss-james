@@ -8,6 +8,9 @@
 	else {
 		echo '<div class="row"><div class="col tegel"><p>Je hebt deze website de laatste drie maanden niet bezocht.</p></div></div>';
 }
+if(isset($_GET["actie"])&& !strcmp($_GET["actie"],"delete")){
+	deleteRow($_GET["id"]);
+}
 
 ?>
 <div class="container">
@@ -25,7 +28,7 @@
 							<td>Status Taak</td>
 							<td>Deadline Taak</td>
 							<td>Taak Aanpassen</td>
-							<td>Taak Verwijderen?</td>
+							<td>Taak Verwijderen</td>
 						</tr>
 					</thead>
 					<tbody>
