@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark">
-			<a class="navbar-brand">
+			<a class="navbar-brand" href="begin.php?page=start">
 				<img src="images/takenlijst.png" alt="logo" id=logo>
 			</a>
 			<div class="collapse navbar-collapse" id="menubalk">

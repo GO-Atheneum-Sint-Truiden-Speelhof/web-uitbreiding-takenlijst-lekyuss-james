@@ -9,7 +9,6 @@
 					<div class="col">
 						<label for="makerN">Naam Maker:</label><br>
 						<p><input type="text" id="makerN" class="form-control"name="makerN"></p>
-						<div id="foutmelding_makerN"></div>
 					</div>
 				</div>
 				

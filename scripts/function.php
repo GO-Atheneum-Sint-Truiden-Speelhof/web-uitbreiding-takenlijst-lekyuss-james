@@ -13,7 +13,6 @@ function connectToDB(){
         echo "Connection failed: " . $conn->connect_error;
      }
      return $conn;
-
 }
 
 function saveToDB(){
@@ -23,6 +22,7 @@ function saveToDB(){
 
     if($conn->query($sql) === true){
         echo "New record created!";
+        header("Refresh: 3; url=begin.php?page=start");
     }
     else{
         echo "ERROR: " . $sql . "<br>" . $conn->error;
@@ -37,18 +37,20 @@ function printDB(){
     
     $result = $conn->query($sql);
     while ($row = $result->fetch_row()){
-        print_r($row);
         echo '<tr>';
         for ($i = 1; $i < count($row); $i++){
             echo "<td>";
             echo "$row[$i]";
             echo "</td>";
         }
-        echo $row[0];
         echo "<td><a href='begin.php?page=wijzig&id=".$row[0]."'><img src='images/potlood.png'></img></a>";
-        echo "<td><a ><img src='images/vuilbak.png'></img></a>";
+        echo "<td><a href='begin.php?page=start&id=".$row[0]."&actie=delete'><img src='images/vuilbak.png'></img></a>";
         echo "</tr>";
     }
+}
+
+    function updateRow(){
+
 }
 
 function deleteRow($id){
@@ -62,7 +64,7 @@ function deleteRow($id){
     }
 
     mysqli_close($conn);
-    }
+}
 
 function login(){
     $conn = connectToDB();
