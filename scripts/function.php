@@ -49,8 +49,18 @@ function printDB(){
     }
 }
 
-    function updateRow(){
+function updateRow($id){
+    $conn = connectToDB();
 
+    $sql = "UPDATE taken 
+    SET NaamMaker = '".$_POST["UmakerN"]."', NaamTaak = '".$_POST["UtaakN"]."', Beschrijving = '".$_POST["Ubeschrijving"]."', Status = '".$_POST["Ustatus"]."', Deadline = '".$_POST["Udeadline"]."' WHERE id = $id";
+    if (mysqli_query($conn, $sql)) {
+        echo "Record updated successfully";
+    } else {
+        echo "Error updating record: " . mysqli_error($conn);
+    }
+    
+    mysqli_close($conn);
 }
 
 function deleteRow($id){
