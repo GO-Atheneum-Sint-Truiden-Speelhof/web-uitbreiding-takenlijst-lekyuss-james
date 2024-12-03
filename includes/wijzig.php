@@ -57,4 +57,3 @@ if(isset($_POST['MakerNaam']) && !empty($_POST['MakerNaam'])){
 	echo "Fout";
 }
 ?>
-updateRow($_POST);
