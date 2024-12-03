@@ -49,11 +49,12 @@ function printDB(){
     }
 }
 
-function updateRow($id){
+function updateRow($array){
     $conn = connectToDB();
+    $array["ID"];
 
     $sql = "UPDATE taken 
-    SET NaamMaker = '".$_POST["UmakerN"]."', NaamTaak = '".$_POST["UtaakN"]."', Beschrijving = '".$_POST["Ubeschrijving"]."', Status = '".$_POST["Ustatus"]."', Deadline = '".$_POST["Udeadline"]."' WHERE id = $id";
+    SET NaamMaker = '".$_POST["UmakerN"]."', NaamTaak = '".$_POST["UtaakN"]."', Beschrijving = '".$_POST["Ubeschrijving"]."', Status = '".$_POST["Ustatus"]."', Deadline = '".$_POST["Udeadline"]."' WHERE ID = '".$array["ID"]."'";
     if (mysqli_query($conn, $sql)) {
         echo "Record updated successfully";
     } else {
@@ -61,6 +62,16 @@ function updateRow($id){
     }
     
     mysqli_close($conn);
+    }
+
+function fetchRow($id){
+    $conn = connectToDB();
+    $qry = "SELECT * FROM taken WHERE ID = '".$id."'";
+    $result = $conn->query($qry);
+    if($result->num_rows == 1){
+        return $result->fetch_assoc();
+    }
+    return false;
 }
 
 function deleteRow($id){

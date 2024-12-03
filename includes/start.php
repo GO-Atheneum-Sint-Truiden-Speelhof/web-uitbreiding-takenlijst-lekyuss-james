@@ -10,7 +10,6 @@
 }
 	if(isset($_GET["actie"]) && !strcmp($_GET["actie"],"delete")){
 	deleteRow($_GET["id"]);
-	
 }
 ?>
 <div class="container">
