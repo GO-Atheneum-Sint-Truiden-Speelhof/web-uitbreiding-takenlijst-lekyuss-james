@@ -4,7 +4,7 @@
 | :------- | :---: | :---------: | :-----------: | :----: |---:|
 | De leerling voorziet een formulier waar de gebruiker een nieuwe taak kan invoeren |X | | | | 5|
 | De leerling toon de lijst van taken in een tabel.  |X | | | | 5|
-| De leerling zorgt dat de layout responsief is. (Bootstrap)  | |X | | | 3|
+| De leerling zorgt dat de layout responsief is. (Bootstrap)  | X|| | | 5|
 | De leerling creeërt een correcte databank + tabel voor de gegevens. | X| | | | 5|
 | De leerling kan de gegevens van een taak bewaren in een databank. | X| | | | 5|
 | De leerling kan de gegevens uitlezen uit de databank. | X| | | | 5|
@@ -22,7 +22,7 @@
 ## Opmerkingen ##
 Geen
 
-Je behaalde een score van __28/50__ en __1/15__
+Je behaalde een score van __30/35__ en __1/15__
 
 ### Mondelinge verdediging: ###
 * Waarom gebruiken jullie cookies?
